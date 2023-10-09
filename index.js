@@ -22,6 +22,7 @@ connectToDb((err) => {
 });
 
 app.get("/coffe-shop", (req, res) => {
+  res.end(`hello world :)`)
   const shopes = [];
   db.collection("shop")
     .find()
