@@ -6,7 +6,6 @@ const PORT = 3000;
 let db;
 
 const app = express();
-app.use(cors());
 
 app.use(express.json());
 
@@ -15,6 +14,8 @@ const corsOptions = {
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   optionsSuccessStatus: 204, // No Content response for preflight requests
 };
+app.use(cors(corsOptions));
+
 
 connectToDb((err) => {
   if (!err) {
