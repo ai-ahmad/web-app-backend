@@ -7,7 +7,6 @@ let db;
 
 const app = express();
 
-
 const corsOptions = {
   origin: 'https://deft-snickerdoodle-a988a0.netlify.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -15,7 +14,6 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(express.json());
-
 
 connectToDb((err) => {
   if (!err) {
