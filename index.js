@@ -10,6 +10,12 @@ app.use(cors());
 
 app.use(express.json());
 
+const corsOptions = {
+  origin: 'https://deft-snickerdoodle-a988a0.netlify.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  optionsSuccessStatus: 204, // No Content response for preflight requests
+};
+
 connectToDb((err) => {
   if (!err) {
     app.listen(PORT, (err) => {
