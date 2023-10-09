@@ -7,7 +7,6 @@ let db;
 
 const app = express();
 
-app.use(express.json());
 
 const corsOptions = {
   origin: 'https://deft-snickerdoodle-a988a0.netlify.app',
@@ -15,6 +14,7 @@ const corsOptions = {
   optionsSuccessStatus: 204, // No Content response for preflight requests
 };
 app.use(cors(corsOptions));
+app.use(express.json());
 
 
 connectToDb((err) => {
